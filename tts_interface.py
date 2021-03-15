@@ -1,7 +1,7 @@
-from user_interface.gui import run_gui
+from user_interface.gui import run
 
 def main():
-    run_gui()
+    run()
 
 
 
