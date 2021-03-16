@@ -1,17 +1,11 @@
-from gtts import gTTS
-
+from gtts import gTTS, lang
 
 
 class TextToSpeechUARecognizer():
-    
-    def __init__(self, text) -> None:
-        self.text = text
 
+    def recognize_text(self, text, lang):
 
-
-    def recognize_text_ua(self):
-
-        recognized_text = gTTS(text=self.text, slow=True, lang='uk')
+        recognized_text = gTTS(text=text, slow=True, lang=lang)
         print('Text recognized!')
         return recognized_text
 
@@ -20,4 +14,17 @@ class TextToSpeechUARecognizer():
         recognized_text.save(filename)
         print(f'Saved to {filename}')
 
+    def get_languages_to_display(self):
+        languages_list = lang.tts_langs()
+        languages_to_displ = []
+        for language in languages_list:
+            language = (str(language).upper(), str(languages_list.get(language)))
+            languages_to_displ.append(language)
+        return languages_to_displ
 
+    def get_languages(self):
+        languages_list = lang.tts_langs()
+        languages = []
+        for language in languages_list:
+            languages.append(language)
+        return languages
