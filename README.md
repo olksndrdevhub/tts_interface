@@ -9,3 +9,12 @@
 - [ ] Port app to Windows
 - [ ] Add option to playing sound directly in app
 - [ ] Create a logo
+
+<hr>
+
+## To run:  
+- clone repo, 
+- navigate in repo folder, 
+- activate virtual environment, 
+- install requirements, 
+- run `python tts_interface.py`
